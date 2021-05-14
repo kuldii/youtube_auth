@@ -30,6 +30,7 @@ class Products with ChangeNotifier {
         throw (response.statusCode);
       } else {
         Product data = Product(
+          id: json.decode(response.body)["name"].toString(),
           title: title,
           price: price,
           createdAt: dateNow,
