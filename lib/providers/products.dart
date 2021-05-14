@@ -26,7 +26,7 @@ class Products with ChangeNotifier {
         }),
       );
 
-      if (response.statusCode > 300 && response.statusCode < 200) {
+      if (response.statusCode > 300 || response.statusCode < 200) {
         throw (response.statusCode);
       } else {
         Product data = Product(
@@ -59,7 +59,7 @@ class Products with ChangeNotifier {
         }),
       );
 
-      if (response.statusCode > 300 && response.statusCode < 200) {
+      if (response.statusCode > 300 || response.statusCode < 200) {
         throw (response.statusCode);
       } else {
         Product edit = _allProduct.firstWhere((element) => element.id == id);
@@ -80,7 +80,7 @@ class Products with ChangeNotifier {
     try {
       var response = await http.delete(url);
 
-      if (response.statusCode > 300 && response.statusCode < 200) {
+      if (response.statusCode > 300 || response.statusCode < 200) {
         throw (response.statusCode);
       } else {
         _allProduct.removeWhere((element) => element.id == id);
