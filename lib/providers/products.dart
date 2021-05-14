@@ -30,7 +30,6 @@ class Products with ChangeNotifier {
         throw (response.statusCode);
       } else {
         Product data = Product(
-          id: dateNow.toString(),
           title: title,
           price: price,
           createdAt: dateNow,
