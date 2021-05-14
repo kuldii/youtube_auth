@@ -5,10 +5,10 @@ class Product {
   DateTime createdAt, updatedAt;
 
   Product({
-    this.id,
+    @required this.id,
     @required this.title,
     @required this.price,
-    this.createdAt,
+    @required this.createdAt,
     this.updatedAt,
   });
 }
